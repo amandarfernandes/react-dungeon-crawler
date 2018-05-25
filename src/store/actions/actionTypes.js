@@ -1,0 +1,10 @@
+export const CREATE_BOARD = 'CREATE_BOARD';
+export const MOVE_PLAYER = 'MOVE_PLAYER';
+export const CHANGE_HEALTH = 'CHANGE_HEALTH';
+export const ADD_WEAPON = 'ADD_WEAPON';
+export const NEW_LEVEL = 'NEW_LEVEL';
+export const ADD_XP = 'ADD_XP';
+export const RESTART = 'RESTART';
+export const MODIFY_BOARD = 'MODIFY_BOARD';
+export const TOGGLE_FOG = 'TOGGLE_FOG';
+export const BOARD_MSG = 'BOARD_MSG';

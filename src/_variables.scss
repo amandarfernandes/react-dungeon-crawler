@@ -1,0 +1,21 @@
+$back: #232526;
+$text: #efefef;
+$floor: #c0c0c0;
+$cell: #8b4513;
+$zone2: #7f9a65;
+$zone3: #3f6826;
+$zone4: #66cd00;
+$potion: #e6e6fa;
+$weapon: orange;
+$exit: blue;
+$enemy: red;
+$player: pink;
+$boss: purple;
+$clr-bg: #2d3a3a;
+
+$clr-offwhite: #fdfdfd;
+$clr-disabled: rgba(lighten($clr-bg, 20%), 0.2);
+$clr-active: #26b549;
+$clr-activeedge: rgba(lighten($clr-active, 40%), 0.5);
+
+$anim: 250ms cubic-bezier(0, 0, 0.3, 1);

@@ -1,0 +1,261 @@
+//@import '../node_modules/compass-sass-mixins/lib/compass';
+@import '_variables.scss';
+@import '_mixins.scss';
+
+.knife {
+  width: 1em;
+  height: 1em;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .footer,
+  .header {
+    width: 100vw;
+    background: $back;
+    color: $text;
+    text-align: center;
+    align-self: flex-start;
+  }
+
+  .footer {
+    align-self: flex-end;
+  }
+
+  main {
+    display: flex;
+    align-items: space-between;
+
+    .sidebar {
+      margin: 0 20px;
+      background: black;
+      color: $text;
+      width: 260px;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      flex-basis: auto;
+      .message {
+        box-sizing: border-box;
+        text-align: center;
+        width: 100%;
+        color: red;
+        background: #333;
+        height: 2.5em;
+        font-size: 1.2em;
+        vertical-align: middle;
+        line-height: 2.5em;
+      }
+      .legend {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        h4 {
+          width: 100%;
+          text-align: center;
+          background: red;
+        }
+
+        div {
+          display: flex;
+
+          div {
+            margin: 1em;
+            width: 1em;
+            height: 1em;
+          }
+
+          .potion {
+            @include star();
+            background: $potion;
+          }
+          .enemy {
+            @include triangle();
+            background: $enemy;
+          }
+          .weapon {
+            @include x();
+            background: $weapon;
+          }
+          //.player {
+          //  @include circle();
+          //  background: $player;
+          // }
+          .exit {
+            background: $exit;
+            border: 1px solid $exit;
+          }
+          .boss {
+            background: $boss;
+            @include triangle();
+          }
+        }
+      }
+
+      .settings {
+        h4 {
+          display: inline-block;
+          margin-right: 0.7em;
+          &:nth-of-type(2) {
+            margin-left: 1em;
+          }
+        }
+        .toggle-switch {
+          input {
+            opacity: 0;
+            pointer-events: none;
+            position: absolute;
+
+            &:checked + label {
+              margin: 0;
+              padding: 0;
+              overflow: hidden;
+              &:before {
+                content: '';
+                opacity: 1;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+              }
+              &:after {
+                content: '';
+                width: 1em;
+                height: 1em;
+                position: absolute;
+                top: 0;
+                left: 0;
+                margin: 0;
+                padding: 0;
+                transform: translate(1em, -5%);
+              }
+            }
+          }
+
+          label {
+            display: inline-block;
+            cursor: pointer;
+            width: 2em;
+            height: 1em;
+            background: $clr-disabled;
+            border-radius: 1em;
+            box-shadow: 0 2px 2px #aaa, 0 -2px 2px #aaa;
+            box-sizing: border-box;
+            overflow: hidden;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            &:before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              background: $clr-active;
+              margin: 0;
+              padding: 0;
+              width: 100%;
+              height: 100%;
+              opacity: 0;
+              transition: opacity $anim;
+            }
+            &:after {
+              content: '';
+              position: absolute;
+              display: inline-block;
+              background: $clr-offwhite;
+              margin: 0;
+              padding: 0;
+              width: 1em;
+              height: 1em;
+              top: 0;
+              left: 0;
+              border-radius: 50%;
+              transform: translate(0, -5%);
+            }
+          }
+        }
+      }
+    }
+
+    .container {
+      border: 1px solid rgba(0, 0, 0, 0.4);
+      background: $back;
+      .row {
+        display: flex;
+        justify-content: center;
+
+        .zone1 {
+          height: 1em;
+          width: 1em;
+          background: $cell;
+          @include border($cell);
+        }
+
+        .zone2 {
+          height: 1em;
+          width: 1em;
+          background: $zone2;
+          @include border($zone2);
+        }
+
+        .zone3 {
+          height: 1em;
+          width: 1em;
+          background: $zone3;
+          @include border($zone3);
+        }
+
+        .zone4 {
+          height: 1em;
+          width: 1em;
+          background: $zone4;
+          @include border($zone4);
+        }
+
+        .floor {
+          background: $floor;
+          @include border($floor);
+        }
+        .exit {
+          background: $exit;
+          @include border($exit);
+        }
+        .potion {
+          background: url('./potion.svg');
+          @include border($floor);
+          //@include star();
+          //@include border($potion);
+        }
+        .player {
+          background: url('./player.svg');
+          @include border($floor);
+          //overflow: hidden;
+        }
+        .enemy {
+          background: url('./enemy.svg');
+          @include border($floor);
+        }
+        .boss {
+          background: $boss;
+          @include triangle();
+          @include border($boss);
+        }
+        .weapon {
+          background: url('./weapon.svg');
+          @include border($floor);
+          //@include rect($floor);
+          //background: $weapon;
+          //@include x();
+          //@include border($weapon);
+        }
+      }
+    }
+  }
+}

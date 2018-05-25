@@ -1,0 +1,8 @@
+body {
+  margin: 0px;
+  padding: 0;
+  font-family: sans-serif;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: #232526; }

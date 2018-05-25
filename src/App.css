@@ -1,0 +1,192 @@
+.knife {
+  width: 1em;
+  height: 1em; }
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .App .footer,
+  .App .header {
+    width: 100vw;
+    background: #232526;
+    color: #efefef;
+    text-align: center;
+    align-self: flex-start; }
+  .App .footer {
+    align-self: flex-end; }
+  .App main {
+    display: flex;
+    align-items: space-between; }
+    .App main .sidebar {
+      margin: 0 20px;
+      background: black;
+      color: #efefef;
+      width: 260px;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      flex-basis: auto; }
+      .App main .sidebar .message {
+        box-sizing: border-box;
+        text-align: center;
+        width: 100%;
+        color: red;
+        background: #333;
+        height: 2.5em;
+        font-size: 1.2em;
+        vertical-align: middle;
+        line-height: 2.5em; }
+      .App main .sidebar .legend {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; }
+        .App main .sidebar .legend h4 {
+          width: 100%;
+          text-align: center;
+          background: red; }
+        .App main .sidebar .legend div {
+          display: flex; }
+          .App main .sidebar .legend div div {
+            margin: 1em;
+            width: 1em;
+            height: 1em; }
+          .App main .sidebar .legend div .potion {
+            -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            background: #e6e6fa; }
+          .App main .sidebar .legend div .enemy {
+            -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            background: red; }
+          .App main .sidebar .legend div .weapon {
+            -webkit-clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+            clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+            background: orange; }
+          .App main .sidebar .legend div .exit {
+            background: blue;
+            border: 1px solid blue; }
+          .App main .sidebar .legend div .boss {
+            background: purple;
+            -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%); }
+      .App main .sidebar .settings h4 {
+        display: inline-block;
+        margin-right: 0.7em; }
+        .App main .sidebar .settings h4:nth-of-type(2) {
+          margin-left: 1em; }
+      .App main .sidebar .settings .toggle-switch input {
+        opacity: 0;
+        pointer-events: none;
+        position: absolute; }
+        .App main .sidebar .settings .toggle-switch input:checked + label {
+          margin: 0;
+          padding: 0;
+          overflow: hidden; }
+          .App main .sidebar .settings .toggle-switch input:checked + label:before {
+            content: '';
+            opacity: 1;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0; }
+          .App main .sidebar .settings .toggle-switch input:checked + label:after {
+            content: '';
+            width: 1em;
+            height: 1em;
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 0;
+            padding: 0;
+            transform: translate(1em, -5%); }
+      .App main .sidebar .settings .toggle-switch label {
+        display: inline-block;
+        cursor: pointer;
+        width: 2em;
+        height: 1em;
+        background: rgba(90, 115, 115, 0.2);
+        border-radius: 1em;
+        box-shadow: 0 2px 2px #aaa, 0 -2px 2px #aaa;
+        box-sizing: border-box;
+        overflow: hidden;
+        position: relative;
+        margin: 0;
+        padding: 0; }
+        .App main .sidebar .settings .toggle-switch label:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          background: #26b549;
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+          transition: opacity 250ms cubic-bezier(0, 0, 0.3, 1); }
+        .App main .sidebar .settings .toggle-switch label:after {
+          content: '';
+          position: absolute;
+          display: inline-block;
+          background: #fdfdfd;
+          margin: 0;
+          padding: 0;
+          width: 1em;
+          height: 1em;
+          top: 0;
+          left: 0;
+          border-radius: 50%;
+          transform: translate(0, -5%); }
+    .App main .container {
+      border: 1px solid rgba(0, 0, 0, 0.4);
+      background: #232526; }
+      .App main .container .row {
+        display: flex;
+        justify-content: center; }
+        .App main .container .row .zone1 {
+          height: 1em;
+          width: 1em;
+          background: #8b4513;
+          border: 1px solid #b85b19; }
+        .App main .container .row .zone2 {
+          height: 1em;
+          width: 1em;
+          background: #7f9a65;
+          border: 1px solid #99ae84; }
+        .App main .container .row .zone3 {
+          height: 1em;
+          width: 1em;
+          background: #3f6826;
+          border: 1px solid #568d34; }
+        .App main .container .row .zone4 {
+          height: 1em;
+          width: 1em;
+          background: #66cd00;
+          border: 1px solid #7fff01; }
+        .App main .container .row .floor {
+          background: #c0c0c0;
+          border: 1px solid #dadada; }
+        .App main .container .row .exit {
+          background: blue;
+          border: 1px solid #3333ff; }
+        .App main .container .row .potion {
+          background: url("./potion.svg");
+          border: 1px solid #dadada; }
+        .App main .container .row .player {
+          background: url("./player.svg");
+          border: 1px solid #dadada; }
+        .App main .container .row .enemy {
+          background: url("./enemy.svg");
+          border: 1px solid #dadada; }
+        .App main .container .row .boss {
+          background: purple;
+          -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+          clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+          border: 1px solid #b300b3; }
+        .App main .container .row .weapon {
+          background: url("./weapon.svg");
+          border: 1px solid #dadada; }
