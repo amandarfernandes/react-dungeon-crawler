@@ -21,27 +21,7 @@ const Sidebar = ({ player, dungeon, setFogMode, fogmode, message }) => {
           <label htmlFor="fogMode" />
         </p>
       </div>
-      <div className="legend">
-        <h4>Legend</h4>
-        <div>
-          <p>Player</p> <div className="player" />
-        </div>
-        <div>
-          <p>Potion</p> <div className="star" />
-        </div>
-        <div>
-          <p>Enemy</p> <div className="enemy" />
-        </div>
-        <div>
-          <p>Weapon</p> <div className="weapon" />
-        </div>
-        <div>
-          <p>Boss</p> <div className="boss" />
-        </div>
-        <div>
-          <p>Exit </p> <div className="exit" />
-        </div>
-      </div>
+
       <div className="message">{message}</div>
     </div>
   );

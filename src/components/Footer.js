@@ -5,10 +5,10 @@ class Footer extends Component {
     instructions: [
       'Use Arrow Keys to move Player',
       'Defeat Enemies (🔺) to gain XP',
-      'Pick up weapons (X) to increase damage',
+      'Pick up weapons (❌) to increase damage',
       'Some weapons are more powerful than others',
-      'Exits (◽ ) will level you up',
-      'Potions (⭐) increase your health'
+      'Exits (◽) will level you up',
+      'Potions (💜) increase your health'
     ],
     index: 0,
     intervalId: null

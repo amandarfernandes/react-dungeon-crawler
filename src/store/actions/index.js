@@ -68,18 +68,34 @@ export const playerMoved = coords => {
         const { weapon, xp, health } = player;
         const canDamage = Math.floor(weapon.damage * _.random(1, 1.5) * Math.floor(xp / 50));
         destination.health -= canDamage;
+
         //enemy eliminated
         if (destination.health <= 0) {
           //add XP and move player
-          actions.push(
-            addXP(xp + 50),
-            modifyBoard({ type: 'floor' }, [xPos, yPos]),
-            modifyBoard(playertile, [xPos + x, yPos + y]),
-            movePlayer([xPos + x, yPos + y])
-          );
+          console.log(destination);
+          if (destination.type === 'boss') {
+            actions.push(
+              setMessage('You defeated the Boss and won the game! '),
+              modifyBoard({ type: 'floor' }, [xPos, yPos]),
+              modifyBoard(playertile, [xPos + x, yPos + y]),
+              movePlayer([xPos + x, yPos + y])
+            );
+
+            const restartGame = [restart(), newLevel(1), createBoard(1)];
+            setTimeout(() => dispatch(batchActions(restartGame)), 5000);
+          } else {
+            actions.push(
+              setMessage('You defeated the enemy and gained XP'),
+              addXP(xp + 50),
+              modifyBoard({ type: 'floor' }, [xPos, yPos]),
+              modifyBoard(playertile, [xPos + x, yPos + y]),
+              movePlayer([xPos + x, yPos + y])
+            );
+          }
         } else {
-          const playerDamaged = Math.floor(_.random(4, 7) * gameboard.gameLevel);
+          const playerDamaged = Math.floor(_.random(4, 10) * gameboard.gameLevel);
           actions.push(
+            setMessage(`You sustained ${playerDamaged} damage`),
             modifyBoard(destination, [xPos + x, yPos + y]),
             changeHealth(health - playerDamaged)
           );
@@ -95,8 +111,8 @@ export const playerMoved = coords => {
       default:
         break;
     }
-    console.log(actions);
+    //console.log(actions);
     dispatch(batchActions(actions));
-    console.log(getState());
+    //console.log(getState());
   };
 };

@@ -1,11 +1,5 @@
-//@import '../node_modules/compass-sass-mixins/lib/compass';
 @import '_variables.scss';
 @import '_mixins.scss';
-
-.knife {
-  width: 1em;
-  height: 1em;
-}
 
 .App {
   display: flex;
@@ -33,23 +27,24 @@
       margin: 0 20px;
       background: black;
       color: $text;
-      width: 260px;
+      width: 300px;
       height: 500px;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
       flex-basis: auto;
+
       .message {
         box-sizing: border-box;
         text-align: center;
         width: 100%;
         color: red;
         background: #333;
-        height: 2.5em;
-        font-size: 1.2em;
+        height: 3em;
+        font-size: 1em;
         vertical-align: middle;
-        line-height: 2.5em;
+        line-height: 2em;
       }
       .legend {
         display: flex;
@@ -73,28 +68,27 @@
           }
 
           .potion {
-            @include star();
-            background: $potion;
+            @include potion();
           }
+
           .enemy {
-            @include triangle();
-            background: $enemy;
+            @include enemy();
           }
+
           .weapon {
-            @include x();
-            background: $weapon;
+            @include weapon();
           }
-          //.player {
-          //  @include circle();
-          //  background: $player;
-          // }
+
+          .player {
+            @include player();
+          }
+
           .exit {
             background: $exit;
             border: 1px solid $exit;
           }
           .boss {
-            background: $boss;
-            @include triangle();
+            @include boss();
           }
         }
       }
@@ -227,33 +221,21 @@
           background: $exit;
           @include border($exit);
         }
+
         .potion {
-          background: url('./potion.svg');
-          @include border($floor);
-          //@include star();
-          //@include border($potion);
+          @include potion();
         }
         .player {
-          background: url('./player.svg');
-          @include border($floor);
-          //overflow: hidden;
+          @include player();
         }
         .enemy {
-          background: url('./enemy.svg');
-          @include border($floor);
+          @include enemy();
         }
         .boss {
-          background: $boss;
-          @include triangle();
-          @include border($boss);
+          @include boss();
         }
         .weapon {
-          background: url('./weapon.svg');
-          @include border($floor);
-          //@include rect($floor);
-          //background: $weapon;
-          //@include x();
-          //@include border($weapon);
+          @include weapon();
         }
       }
     }

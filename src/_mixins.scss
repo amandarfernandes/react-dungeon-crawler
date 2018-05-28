@@ -1,77 +1,29 @@
+@import '_variables.scss';
+
 @mixin border($color) {
   border: 1px solid lighten($color, 10%);
 }
 
-//@mixin circle() {
-//  -moz-border-radius: 50%;
-//  -webkit-border-radius: 50%;
-//  border-radius: 50%;
-//}
-
-@mixin triangle() {
-  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+@mixin player() {
+  background: url('./player.svg');
+  @include border($floor);
 }
 
-@mixin rect($color) {
-  background: $color;
-  -webkit-clip-path: polygon(0 0, 100% 1%, 100% 100%, 0% 100%);
-  clip-path: polygon(0 0, 100% 1%, 100% 100%, 0% 100%);
-}
-@mixin x() {
-  -webkit-clip-path: polygon(
-    20% 0%,
-    0% 20%,
-    30% 50%,
-    0% 80%,
-    20% 100%,
-    50% 70%,
-    80% 100%,
-    100% 80%,
-    70% 50%,
-    100% 20%,
-    80% 0%,
-    50% 30%
-  );
-  clip-path: polygon(
-    20% 0%,
-    0% 20%,
-    30% 50%,
-    0% 80%,
-    20% 100%,
-    50% 70%,
-    80% 100%,
-    100% 80%,
-    70% 50%,
-    100% 20%,
-    80% 0%,
-    50% 30%
-  );
+@mixin potion() {
+  background: url('./potion.svg');
+  @include border($floor);
 }
 
-@mixin star() {
-  -webkit-clip-path: polygon(
-    50% 0%,
-    61% 35%,
-    98% 35%,
-    68% 57%,
-    79% 91%,
-    50% 70%,
-    21% 91%,
-    32% 57%,
-    2% 35%,
-    39% 35%
-  );
-  clip-path: polygon(
-    50% 0%,
-    61% 35%,
-    98% 35%,
-    68% 57%,
-    79% 91%,
-    50% 70%,
-    21% 91%,
-    32% 57%,
-    2% 35%,
-    39% 35%
-  );
+@mixin weapon() {
+  background: url('./weapon.svg');
+  @include border($floor);
+}
+
+@mixin enemy() {
+  background: url('./enemy.svg');
+  @include border($floor);
+}
+
+@mixin boss() {
+  background: url('./boss.svg');
 }
