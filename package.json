@@ -2,6 +2,10 @@
   "name": "react-dungeon-crawler",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "8.10.0",
+    "npm": "6.0.0"
+  },
   "dependencies": {
     "compass-sass-mixins": "^0.12.7",
     "immutability-helper": "^2.7.0",
